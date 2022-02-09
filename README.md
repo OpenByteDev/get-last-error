@@ -1,10 +1,10 @@
 # get-last-error
 
-[![CI](https://github.com/OpenByteDev/dll-syringe/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenByteDev/dll-syringe/actions/workflows/ci.yml)
-[![crates.io](https://img.shields.io/crates/v/dll-syringe.svg)](https://crates.io/crates/dll-syringe)
-[![Documentation](https://docs.rs/dll-syringe/badge.svg)](https://docs.rs/dll-syringe)
-[![dependency status](https://deps.rs/repo/github/openbytedev/dll-syringe/status.svg)](https://deps.rs/repo/github/openbytedev/dll-syringe)
-[![MIT](https://img.shields.io/crates/l/dll-syringe.svg)](https://github.com/OpenByteDev/dll-syringe/blob/master/LICENSE)
+[![CI](https://github.com/OpenByteDev/get-last-error/actions/workflows/ci.yml/badge.svg)](https://github.com/OpenByteDev/get-last-error/actions/workflows/ci.yml)
+[![crates.io](https://img.shields.io/crates/v/get-last-error.svg)](https://crates.io/crates/get-last-error)
+[![Documentation](https://docs.rs/get-last-error/badge.svg)](https://docs.rs/get-last-error)
+[![dependency status](https://deps.rs/repo/github/openbytedev/get-last-error/status.svg)](https://deps.rs/repo/github/openbytedev/get-last-error)
+[![MIT](https://img.shields.io/crates/l/get-last-error.svg)](https://github.com/OpenByteDev/get-last-error/blob/master/LICENSE)
 
 An error wrapper over Win32 API errors.
 
