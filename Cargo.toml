@@ -1,0 +1,29 @@
+[package]
+name = "get-last-error"
+version = "0.1.0"
+description = "An error wrapper over Win32 API errors."
+readme = "README.md"
+repository = "https://github.com/OpenByteDev/get-last-error" 
+homepage = "https://github.com/OpenByteDev/get-last-error"
+documentation = "https://docs.rs/get-last-error"
+license = "MIT"
+authors = ["OpenByte <development.openbyte@gmail.com>"]
+edition = "2021"
+keywords = ["winapi", "win32", "error", "ffi"]
+categories = ["no-std", "os::windows-apis"]
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winapi = { version = "0.3", features = ["errhandlingapi", "winbase"] }
+
+[dev-dependencies]
+w32-error = "1.0"
+rust_win32error = "0.8"
+
+[features]
+std = ["winapi/std"]
+default = ["std"]
+
+[package.metadata.docs.rs]
+features = ["std"]
+default-target = "x86_64-pc-windows-msvc"
+targets = []
