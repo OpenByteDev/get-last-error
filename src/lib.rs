@@ -58,10 +58,7 @@ use core::{
 };
 
 #[cfg(feature = "std")]
-use std::{
-    error::Error,
-    io
-};
+use std::{error::Error, io};
 
 use winapi::{
     shared::minwindef::DWORD,
