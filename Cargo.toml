@@ -1,6 +1,6 @@
 [package]
 name = "get-last-error"
-version = "0.1.0"
+version = "0.1.1"
 description = "An error wrapper over Win32 API errors."
 readme = "README.md"
 repository = "https://github.com/OpenByteDev/get-last-error" 
