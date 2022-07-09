@@ -1,9 +1,5 @@
 #![cfg(windows)]
 #![cfg_attr(not(feature = "std"), no_std)]
-#![cfg_attr(
-    nightly,
-    feature(maybe_uninit_uninit_array, maybe_uninit_array_assume_init)
-)]
 #![warn(
     unsafe_op_in_unsafe_fn,
     missing_docs,
@@ -197,24 +193,12 @@ impl From<Win32Error> for io::Error {
     }
 }
 
+// TODO: replace with MaybeUninit::slice_assume_init_ref(slice) once stable
 const unsafe fn maybe_uninit_slice_assume_init_ref<T>(slice: &[MaybeUninit<T>]) -> &[T] {
-    #[cfg(nightly)]
-    unsafe {
-        MaybeUninit::slice_assume_init_ref(slice)
-    }
-    #[cfg(not(nightly))]
-    unsafe {
-        &*(slice as *const [MaybeUninit<T>] as *const [T])
-    }
+    unsafe { &*(slice as *const [MaybeUninit<T>] as *const [T]) }
 }
 
+// TODO: replace with MaybeUninit::uninit_array::<LEN, T>() once stable
 fn maybe_uninit_uninit_array<T, const LEN: usize>() -> [MaybeUninit<T>; LEN] {
-    #[cfg(nightly)]
-    unsafe {
-        MaybeUninit::uninit_array::<MAX_PATH, T>()
-    }
-    #[cfg(not(nightly))]
-    unsafe {
-        MaybeUninit::<[MaybeUninit<T>; LEN]>::uninit().assume_init()
-    }
+    unsafe { MaybeUninit::<[MaybeUninit<T>; LEN]>::uninit().assume_init() }
 }
